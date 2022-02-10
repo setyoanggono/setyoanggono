@@ -53,7 +53,7 @@
                             </a>
                             </td>
                     </tr>
-                    </table>
+               </table>
             </div>
           </div>
         </section>

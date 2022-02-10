@@ -55,5 +55,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::get('/detail/{id}', [UserController::class, 'detail'])->name('detail');
     Route::get('/upload', [UploadsController::class, 'upload'])->name('upload');
     Route::post('/save', [uploadsController::class, 'save'])->name('save');
+    Route::get('/gallery', [UserController::class, 'gallery'])->name('gallery');
 });
            

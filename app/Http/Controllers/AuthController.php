@@ -35,7 +35,7 @@ class AuthController extends Controller
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
             $user   = Auth::getLastAttempted();
 
-            Alert::success('Congrats', 'Login Success');
+            Alert::success('Success', 'Login Success');
             return redirect()->route('home');
         } else {
             return redirect()->route('login')->with('Wrong Password')->withInput();
@@ -75,7 +75,7 @@ class AuthController extends Controller
         $user->password         =   Hash::make($request->password);
         $user->save();
 
-        Alert::success('Congrats', 'You\'ve Successfully Registered');
+        Alert::success('Success', 'You\'ve Successfully Registered');
         return redirect()->route('login');
     }
 }

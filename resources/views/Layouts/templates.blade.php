@@ -14,7 +14,7 @@
       <!-- Theme style -->
       <link rel="stylesheet" href="{{ asset('asetts/dist/css/adminlte.min.css') }}">
       <link rel="stylesheet" href="{{ asset('asetts/style.css') }}">
-    </head>
+     </head>
     <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
     <div class="wrapper">
 
@@ -28,7 +28,7 @@
         <!-- Brand Logo -->
         <a href="/home" class="brand-link">
           <img src="{{ asset('asetts/dist/img/3q.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">Aplikasi Coba</span>
+          <span class="brand-text font-weight-light"><marquee direction="left" scrollamount="2" align="center" class="text-warning">Tricky Solution For Your Future</marquee></span>
         </a>
 
         <!-- Sidebar -->
@@ -48,6 +48,7 @@
         @include('Layouts.footer')
       </div>
         @include('sweetalert::alert')
+        
       <!-- ./wrapper -->
 
       <!-- REQUIRED SCRIPTS -->
@@ -59,6 +60,12 @@
       <script src="{{ asset('asetts/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
       <!-- AdminLTE App -->
       <script src="{{ asset('asetts/dist/js/adminlte.js') }}"></script>
+      <script>
+      $( ".images" ).click(function(e) {
+       img = $(this).attr('src')
+       $(".img-tmp").attr("src",img) 
+});
+      </script>
 
       <!-- PAGE PLUGINS -->
       <!-- jQuery Mapael -->
@@ -75,5 +82,5 @@
       <script src="{{ asset('asetts/dist/js/pages/dashboard2.js') }}"></script>
 
       @yield('script')
-      </body>
+     </body>
       </html>

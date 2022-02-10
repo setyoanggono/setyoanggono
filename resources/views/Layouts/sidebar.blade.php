@@ -79,7 +79,15 @@
                   </a>
                 </li>
               </ul>
-                <li class="nav-item">
+              <li class="nav-item">
+                <a href="/gallery" class="nav-link {{ (Route::is('gallery')) ? 'active' : '' }}">
+                  <i class="fas fa-image"></i>
+                  <p>
+                    Gallery
+                  </p>
+                </a>
+                  
+              <li class="nav-item">
                   <a href="{{ url('logout') }}" class="nav-link logout-confirm">
                     <i class="fas fa-outdent"></i>
                     <p>
@@ -95,7 +103,6 @@
           const url = $(this).attr('href');
           swal({
               title: 'Are you sure?',
-              text: 'This record and it`s details will be permanently deleted!',
               icon: 'warning',
               buttons: ["Cancel", "Yes!"],
           }).then(function(value) {

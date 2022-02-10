@@ -39,7 +39,7 @@ class UserController extends Controller
         $user->image            =   $image_name;
         $user->save();
 
-        Alert::success('Congrats', 'You\'ve Successfully Registered');
+        Alert::success('Success', 'You\'ve Successfully Registered');
         return redirect()->route('akun');
     }
 
@@ -86,7 +86,7 @@ class UserController extends Controller
         $check->email       =   $email;
         $check->image       =   $image_name;
         $check->save();
-        Alert::success('Congrats', 'You\'ve Successfully Updated');
+        Alert::success('Success', 'You\'ve Successfully Updated');
         return redirect()->route('akun');
     }
 
@@ -96,5 +96,13 @@ class UserController extends Controller
         $data['data']       = User::findOrFail($id);
         return view('detail', $data); 
     }   
+
+    public function gallery()
+    {
+        $usr = User::all();
+        $data['users']= $usr;
+        $data["title"] = "Gallery";
+        return view('gallery', $data);
+    }
    
 }
